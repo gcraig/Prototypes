@@ -1,0 +1,160 @@
+#article #content {
+	max-width: 50em;
+}
+
+#article #content .author,
+#article #content .date {
+	float: none;
+	margin-bottom: 0;
+}
+
+#article #content .location,
+#article #content .date,
+#article #content p {
+	margin-bottom: 1em;
+}
+#article #content h2 {
+	margin: 0;
+}
+
+/* ---------------------------------------
+   changes by craig saila  october 7, 2004 */
+   
+#article #content h4 {
+font-size: 1em;
+}
+ #article #content h5 {
+font-size: 0.9em;
+}
+ #article #content h6 {
+font-size: 0.85em;
+}
+
+#article #content h4,
+#article #content h5,
+#article #content h6 {
+margin-bottom: 0;
+}
+/* --------------------------------------- */
+
+
+#article #bio {
+	margin: 1em 0;
+	padding: 1em 0;
+	border-top: 1px solid #C0C0C0;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+	/*pullquote*/
+#content blockquote.pullquote {
+	width: 260px;
+	margin: 10px;
+	padding: 0;
+	float: right;
+}
+
+#article #content blockquote.pullquote p.pullquote {
+	padding: 0;
+	margin: 0;
+}	
+
+#content blockquote.pullquote span.pullquote {
+	color: #FFF;
+	display: block;
+	width: 210px;
+	margin: 0;
+	padding: 25px;
+	background: transparent url(/images/quote-bottom.gif) left bottom no-repeat;
+}	
+
+
+#addcomment fieldset,
+#addcomment legend {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+#addcomment p {
+	margin-bottom: 0.5em;
+}
+
+#addcomment label {
+	display: block;
+	float: left;
+	width: 7em;
+	clear: left;
+}
+
+#addcomment textarea,
+#addcomment input {
+	width: 70%;
+	margin-bottom: 1em;
+} 
+
+input#cuSubmit {
+	width: auto;
+	float: left;
+}
+
+input#cuPreview {
+	width: auto;
+	float: left;
+	margin-left: 0.5em;
+}
+
+#content .comments {
+	float: left;
+	white-space: nowrap;
+	padding: 0 1em 0 12px;
+	background: url(/images/comments.gif) left no-repeat;
+	padding-right: 0;
+}
+
+/*comments*/
+#content h2#comments {
+	color: #444;
+}
+
+#content .postedComment {
+	border-top: 1px solid #CCC; 
+	padding-top: 0.75em;
+}
+
+#content #previewComment {
+	background-color: #DDF; 
+	padding: 0.5em; 
+	margin-bottom: 1em; 
+	border: 1px solid #66F;
+}
+
+#content #previewComment.error {
+	background-color: #FCC; 
+	border-color: #F66;
+}
+
+#content #previewComment h4 {
+	font-size: 1em;
+	margin: 0;
+}
+
+/*search*/
+#article #content form.search input {
+	vertical-align: middle;
+}
+
+#article #content ul.search li {
+	margin-bottom: 0.75em;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+#article #content ul.search li h2 {
+	display: inline;
+	font-size: 1em;
+}
+
+#article #content ul.search li p {
+	font-size: 0.71em;
+	font-weight: normal;
+}

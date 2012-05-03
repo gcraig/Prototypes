@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.csr.clients.dto.Client" table="client">
+<!--		<id name="addressID" column="addressID" type="int">
+			<generator class="increment"/>
+		</id> -->
+
+		<id name="clientID" column="clientID"/>
+		<property name="clientName"/>
+		<property name="creditLimit"/>
+		<property name="billable"/>
+	</class>
+</hibernate-mapping>

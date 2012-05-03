@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+  - Root application context for the Billing application.
+  -->
+<beans>
+
+	<!-- The central service facade of this application -->
+
+	<bean id="BillingService" class="com.csr.services.billing.BillingService">
+		<property name="invoiceDAO"><ref bean="invoiceDAO"/></property>
+		<property name="productDAO"><ref bean="productDAO"/></property>
+		<property name="addressDAO"><ref bean="addressDAO"/></property>
+		<property name="clientDAO"><ref bean="clientDAO"/></property>
+		<property name="contactDAO"><ref bean="contactDAO"/></property>
+		<property name="emailDAO"><ref bean="emailDAO"/></property>
+		<property name="phoneDAO"><ref bean="phoneDAO"/></property>
+		<property name="urlDAO"><ref bean="urlDAO"/></property>
+		<property name="commonDAO"><ref bean="commonDAO"/></property>
+	</bean>
+
+</beans>

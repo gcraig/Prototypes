@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<!-- DAO Definitions -->
+	<!-- Billing Module -->
+	<bean id="invoiceDAO" class="com.csr.billing.dao.demo.InvoiceDemoDAO" singleton="true"/>
+	<bean id="productDAO" class="com.csr.billing.dao.demo.ProductDemoDAO" singleton="true"/>
+
+	<!-- Clients Module -->
+	<bean id="addressDAO" class="com.csr.clients.dao.demo.AddressDemoDAO" singleton="true"/>
+	<bean id="clientDAO" class="com.csr.clients.dao.demo.ClientDemoDAO" singleton="true"/>
+	<bean id="contactDAO" class="com.csr.clients.dao.demo.ContactDemoDAO" singleton="true"/>
+	<bean id="emailDAO" class="com.csr.clients.dao.demo.EmailAddressDemoDAO" singleton="true"/>
+	<bean id="phoneDAO" class="com.csr.clients.dao.demo.PhoneNumberDemoDAO" singleton="true"/>
+	<bean id="urlDAO" class="com.csr.clients.dao.demo.URLDemoDAO" singleton="true"/>
+
+	<!-- Common, Shared access -->
+	<bean id="commonDAO" class="com.csr.common.dao.demo.CommonDemoDAO" singleton="true"/>
+
+</beans>

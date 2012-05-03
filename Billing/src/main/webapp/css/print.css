@@ -1,0 +1,100 @@
+body {
+	background: #FFF;
+	color: #000;
+}
+
+a:link,
+a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+#slogan,
+#masthead img {
+	visibility: hidden;
+}
+
+#masthead {
+	display: block;
+	width: 140px;
+	height: 40px;
+	background: url(/images/dw_logo-bw.gif) 0 0 no-repeat;
+	overflow/**/: hidden;
+}
+
+#content a:link:after,
+#content a:visited:after, 
+#sidebar a:link:after,
+#sidebar a:visited:after {
+	font-style: italic;
+	content: " ["attr(href)"] ";
+}
+
+abbr,
+acronym {
+	border-bottom: none; 
+}
+
+abbr:after,
+acronym:after {
+	content: " ("attr(title)") ";
+}
+
+#globalNav,
+#sortNav,
+#sideAds,
+p.comments,
+p.archive,
+img.rss,
+.ad {
+	display: none;
+}
+
+#masthead img {
+	border: none;
+}
+
+p.location,
+p.author,
+p.date,
+p.date+p,
+blockquote>p,
+p#bio {
+	margin: 0;
+}
+
+p.location,
+p.author,
+p.date,
+p#bio,
+#footer {
+	font-size: 0.8em;
+}
+
+p.author {
+	padding-bottom: 0.5em;
+}
+
+#article p.location,
+#article p.author,
+#article p.date {
+	padding: 0.5em 0;
+}
+	
+#article p.date {
+	margin-bottom: 1em;
+} 
+
+p#bio {
+	margin: 1em 0;
+	padding: 1em 1.75em;
+}
+
+#home .coverbox {
+	float: left;
+	margin: 4pt 4pt 4pt 0;
+}
+
+#footer {
+	text-align: center;
+}

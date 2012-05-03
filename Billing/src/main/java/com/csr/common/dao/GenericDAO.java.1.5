@@ -1,0 +1,106 @@
+package com.csr.common.dao;
+
+import org.hibernate.*;
+import org.hibernate.criterion.*;
+import java.io.*;
+import java.util.*;
+
+public class GenericDAO<T, ID extends Serializable> extends DAO
+{
+	private Class<T> persistentClass;
+	private Session session;
+
+	public GenericDAO()
+	{
+	}
+
+	public GenericDAO(Class<T> persistentClass, Session session)
+	{
+		this.persistentClass = persistentClass;
+		this.session = session;
+	}
+
+	protected setPersistentClass(Class<T> persistentClass, Session session)
+	{
+		this.persistentClass = persistentClass;
+		this.session = session;
+	}
+
+	protected Session getSession()
+	{
+		return this.session;
+	}
+
+	public Class<T> getPersistentClass()
+	{
+        return this.persistentClass;
+    }
+
+	public int countAll() throws Exception
+	{
+		Query q = getSession().createQuery(
+			"select count(*) from " + getPersistentClass().getName());
+		Object o = q.uniqueResult();
+		Integer i = new Integer(o.toString());
+		System.out.println( i );
+		return i.intValue();
+	}
+
+    public T makePersistent(T entity) throws Exception
+	{
+        getSession().saveOrUpdate(entity);
+        return entity;
+    }
+
+    public void makeTransient(T entity)
+	{
+        getSession().delete(entity);
+    }
+
+    public List<T> findAll() throws Exception
+	{
+        return findByCriteria();
+    }
+
+	public T findByID(ID id)  throws Exception
+	{
+		T entity;
+		entity = (T) getSession().load(getPersistentClass(), id);
+        return entity;
+	}
+
+	protected List<T> findByCriteria(Criterion... criterion) throws Exception
+	{
+		Criteria criteria = getSession().createCriteria( getPersistentClass() );
+
+		for (Criterion c : criterion)
+		{
+			criteria.add(c);
+		}
+
+		try
+		{
+			return criteria.list();
+		}
+		catch (HibernateException e)
+		{
+			throw new Exception(e);
+		}
+	}
+
+	public List search(String startRecord, int pageSize) throws Exception
+	{
+		Criteria criteria = getSession().createCriteria( getPersistentClass() );
+		criteria.setMaxResults(pageSize);
+		criteria.setFirstResult(new Integer(startRecord).intValue());
+
+		try
+		{
+			return criteria.list();
+		}
+		catch (HibernateException e)
+		{
+			throw new Exception(e);
+		}
+	}
+}

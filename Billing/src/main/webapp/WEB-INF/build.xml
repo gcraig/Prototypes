@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+
+<project name="biz" basedir="." default="usage">
+	<description>
+		BillMaster Build, Package and Deploy script
+	</description>
+
+	<!-- global properties for the project -->
+	<property environment="env"/>
+	<property file="build.properties"/>
+    <property name="src.dir" value="src/"/>
+    <property name="web.dir" value=".."/>
+    <property name="reports.dir" value="${web.dir}/WEB-INF/reports"/>
+    <property name="build.dir" value="${web.dir}/WEB-INF/classes"/>
+    <property name="name" value="biz"/>
+	<property name="lib.dir" value="${web.dir}/WEB-INF/lib" />
+	<property name="log4j.jar.path" value="c:/xdoclet-1.2.3/lib/log4j.jar" />
+	<property name="ant.jar.path" value="c:/apache-ant-1.6.5/lib/ant.jar" />
+	<property name="jar.jappo" value="./lib/jappo.jar"/>
+	<property name="generated.src.dir" value="${web.dir}/WEB-INF/src" />
+	<property name="generated.java.dir" value="${generated.src.dir}" />
+	<property name="config.dir" value="${web.dir}/WEB-INF/config" />
+	<property name="build.dir2" value="${web.dir}/WEB-INF/build" />
+	<property name="dist.dir" value="${web.dir}/WEB-INF/dist" />
+	<property name="build.compiler" value="modern" />
+	<property name="deploy.path2" value="g:/jboss-4.0.2/server/default/deploy/" />
+
+    <path id="master-classpath">
+        <fileset dir="${web.dir}/WEB-INF/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <!-- We need the servlet API classes:        -->
+        <!--   for Tomcat 4.1 use servlet.jar        -->
+        <!--   for Tomcat 5.0 use servlet-api.jar    -->
+        <!--   for Other app server - check the docs -->
+        <fileset dir="${appserver.home}/common/lib">
+            <include name="servlet*.jar"/>
+        </fileset>
+        <pathelement path="${build.dir}"/>
+    </path>
+
+    <target name="usage">
+        <echo message=""/>
+        <echo message="${name} build file"/>
+        <echo message="-----------------------------------"/>
+        <echo message=""/>
+        <echo message="Available targets are:"/>
+        <echo message=""/>
+        <echo message="build     --> Build the application"/>
+        <echo message="clean     --> Delete old binaries"/>
+        <echo message="deploy    --> Deploy application as directory"/>
+        <echo message="deploywar --> Deploy application as a WAR file"/>
+        <echo message="backupwar --> Backup application as a WAR file"/>
+        <echo message="test      --> Test the unit tests"/>
+        <echo message="install   --> Install application in Tomcat"/>
+        <echo message="reload    --> Reload application in Tomcat"/>
+        <echo message="start     --> Start Tomcat application"/>
+        <echo message="stop      --> Stop Tomcat application"/>
+        <echo message="list      --> List Tomcat applications"/>
+        <echo message=""/>
+    </target>
+
+	<target name="prepare">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/ejb" />
+		<mkdir dir="${build.dir}/ejb/META-INF" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="clean">
+		<delete dir="${build.dir}/com"/>
+	</target>
+
+	<target name="ejbdoclet" depends="prepare">
+		<taskdef name="ejbdoclet" classname="xdoclet.ejb.EjbDocletTask" classpath="${java.class.path};${log4j.jar.path};${ant.jar.path}"/>
+		<ejbdoclet destdir="${generated.java.dir}" excludedtags="@version,@author" ejbspec="2.0" verbose="true">
+			<fileset dir="${src.dir}">
+				<include name="**/ClientServiceBean.java" />
+				<include name="**/*EntityBean.java" />
+			</fileset>
+			<valueobject pattern="{0}DTO">
+				<packageSubstitution packages="ejb" substituteWith="dto"/>
+			</valueobject>
+			<remoteinterface/>
+			<localinterface/>
+			<homeinterface/>
+			<localhomeinterface/>
+			<entitypk/>
+			<entitycmp/>
+			<session/>
+			<deploymentdescriptor destdir="${build.dir}/ejb/META-INF"/>
+			<jboss version="4.0" destdir="${build.dir}/ejb/META-INF" datasource="java:/MySqlDS" />
+      </ejbdoclet>
+   </target>
+
+	<target name="pp" depends="prepare" description="jappo: java preprocessor">
+		<taskdef name="jappo" classname="org.osfry.jappo.JappoTask" classpath="${jar.jappo}"/>
+		<!-- jappo srcdir="${dir.src}" includes="**/*.jappo" destdir="${dir.src}" listfiles="on" -->
+		<jappo srcdir="${src.dir}" includes="**/*.javap" destdir="${src.dir}" listfiles="on" force="true"/>
+	</target>
+
+    <target name="build" depends="pp" description="Compile main source tree java files">
+        <mkdir dir="${build.dir}"/>
+        <!-- 1.5 -->
+        <javac destdir="${build.dir}" target="1.3" debug="true"
+               deprecation="false" optimize="false" failonerror="true">
+            <src path="${src.dir}"/>
+            <classpath refid="master-classpath"/>
+        </javac>
+    </target>
+
+<target name="test" depends="build"  description="Runs the unit tests">
+
+<mkdir dir="${reports.dir}" />
+
+<junit failureproperty="tests.failed" fork="yes"> 
+		<classpath refid="master-classpath"/>  
+        
+		 <batchtest todir="${reports.dir}">  
+        
+		  <fileset dir="${src.dir}">  
+            <include name="**/*Test.java"/>  
+            <!--
+			exclude name="**/TestAll.java"/>  
+             Momentarily exclude this test that fails for some   
+                 reason on the Gump machine but not on our local  
+                 machines 
+            exclude name="**/TestContainerRunner.java"/>  
+            exclude name="**/TestRunServerTestsTask.java"/>  
+			-->
+          </fileset>  
+          <formatter type="brief" usefile="false"/>  
+          <formatter type="xml"/>  
+      </batchtest>  
+
+      </junit>  
+<fail if="tests.failed">At least one unit test failed!</fail> 
+</target>
+
+
+	<target name="ejb-jar" depends="build">
+		<jar destfile="${dist.dir}/${name}-ejb.jar">
+			<fileset dir="${build.dir}/ejb" />
+			<fileset dir="${build.dir}" includes="com/csr/services/client/ejb/**"  />
+			<fileset dir="${build.dir}" includes="com/csr/clients/ejb/**"  />
+		</jar>
+	</target>
+
+    <target name="deploy" depends="ejb-jar" description="Deploy application">
+        <copy todir="${deploy.path2}" preservelastmodified="true">
+            <fileset dir="${dist.dir}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="deploywar" depends="build" description="Deploy application as a WAR file">
+        <mkdir dir="${dist.dir}"/>
+        <war destfile="${dist.dir}/${name}.war"
+             webxml="${web.dir}/WEB-INF/web.xml">
+            <fileset dir="${web.dir}">
+                <include name="**/*.*"/>
+            </fileset>
+        </war>
+        <copy todir="${deploy.path}" preservelastmodified="true">
+            <fileset dir="${dist.dir}">
+                <include name="*.war"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="backupwar" depends="build" description="Backup application as a WAR file">
+        <mkdir dir="${dist.dir}"/>
+        <war destfile="${dist.dir}/${name}.war"
+             webxml="${web.dir}/WEB-INF/web.xml">
+            <fileset dir="${web.dir}">
+                <include name="**/*.*"/>
+            </fileset>
+        </war>
+        <copy todir="${backup.path}" preservelastmodified="true">
+            <fileset dir="${dist.dir}">
+                <include name="*.war"/>
+            </fileset>
+        </copy>
+    </target>
+
+<!-- ============================================================== -->
+<!-- Tomcat tasks - remove these if you don't have Tomcat installed -->
+<!-- ============================================================== -->
+
+    <taskdef name="install" classname="org.apache.catalina.ant.InstallTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="list" classname="org.apache.catalina.ant.ListTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="start" classname="org.apache.catalina.ant.StartTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="stop" classname="org.apache.catalina.ant.StopTask">
+        <classpath>
+            <path location="${appserver.home}/server/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="install" description="Install application in Tomcat">
+        <install url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"
+                 war="${name}"/>
+    </target>
+
+    <target name="reload" description="Reload application in Tomcat">
+        <reload url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"/>
+    </target>
+
+    <target name="start" description="Start Tomcat application">
+        <start url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"/>
+    </target>
+
+    <target name="stop" description="Stop Tomcat application">
+        <stop url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"
+                 path="/${name}"/>
+    </target>
+
+    <target name="list" description="List Tomcat applications">
+        <list url="${tomcat.manager.url}"
+                 username="${tomcat.manager.username}"
+                 password="${tomcat.manager.password}"/>
+    </target>
+
+<!-- End Tomcat tasks -->
+
+</project>

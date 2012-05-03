@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" name="com.csr.common.dto.UserTest" tests="1" time="0.094">
+  <properties>
+    <property name="java.vendor" value="IBM Corporation"></property>
+    <property name="lib.dir" value="../WEB-INF/lib"></property>
+    <property name="os.name" value="Windows XP"></property>
+    <property name="sun.boot.class.path" value="C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\lib\core.jar;C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\lib\graphics.jar;C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\lib\security.jar;C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\lib\server.jar;C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\lib\xml.jar;C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\lib\charsets.jar"></property>
+    <property name="sun.java2d.fontpath" value=""></property>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="ant.home" value="c:\apache-ant-1.6.5"></property>
+    <property name="java.runtime.version" value="1.4.1"></property>
+    <property name="user.name" value="gcraig"></property>
+    <property name="java.compiler" value="jitc"></property>
+    <property name="tomcat.manager.url" value="http://localhost:8080/manager"></property>
+    <property name="build.dir" value="../WEB-INF/classes"></property>
+    <property name="user.language" value="en"></property>
+    <property name="sun.boot.library.path" value="C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\bin"></property>
+    <property name="reports.dir" value="../WEB-INF/reports"></property>
+    <property name="ant.jar.path" value="c:/apache-ant-1.6.5/lib/ant.jar"></property>
+    <property name="ant.project.name" value="biz"></property>
+    <property name="java.version" value="1.4.1"></property>
+    <property name="user.timezone" value=""></property>
+    <property name="sun.arch.data.model" value="32"></property>
+    <property name="java.endorsed.dirs" value="C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\lib\endorsed"></property>
+    <property name="generated.src.dir" value="../WEB-INF/src"></property>
+    <property name="appserver.home" value="c:/jakarta-tomcat-4.1.31"></property>
+    <property name="file.encoding.pkg" value="sun.io"></property>
+    <property name="log4j.jar.path" value="c:/xdoclet-1.2.3/lib/log4j.jar"></property>
+    <property name="file.separator" value="\"></property>
+    <property name="java.specification.name" value="Java Platform API Specification"></property>
+    <property name="java.class.version" value="48.0"></property>
+    <property name="user.country" value="US"></property>
+    <property name="java.home" value="C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre"></property>
+    <property name="dist.dir" value="../WEB-INF/dist"></property>
+    <property name="java.vm.info" value="J2RE 1.4.1 IBM Windows 32 build cn1411-20031011 (JIT enabled: jitc)"></property>
+    <property name="ant.file" value="C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\build.xml"></property>
+    <property name="os.version" value="5.1"></property>
+    <property name="java.awt.fonts" value=""></property>
+    <property name="tomcat.manager.password" value="tomcat"></property>
+    <property name="path.separator" value=";"></property>
+    <property name="java.vm.version" value="1.4.1"></property>
+    <property name="java.util.prefs.PreferencesFactory" value="java.util.prefs.WindowsPreferencesFactory"></property>
+    <property name="user.variant" value=""></property>
+    <property name="web.dir" value=".."></property>
+    <property name="ant.library.dir" value="C:\apache-ant-1.6.5\lib"></property>
+    <property name="console.encoding" value="Cp850"></property>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"></property>
+    <property name="tomcat.manager.username" value="admin"></property>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"></property>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"></property>
+    <property name="java.assistive" value="ON"></property>
+    <property name="user.home" value="C:\Documents and Settings\gcraig"></property>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."></property>
+    <property name="invokedviajava" value=""></property>
+    <property name="java.library.path" value="C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\bin;.;C:\WINDOWS\system32;C:\WINDOWS;C:\PROGRA~1\RATIONAL\RATION~1\NUTCROOT\bin;C:\PROGRA~1\RATIONAL\RATION~1\NUTCROOT\bin\x11;C:\PROGRA~1\RATIONAL\RATION~1\NUTCROOT\mksnt;C:\Python24\.;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\ATI Technologies\ATI Control Panel;C:\WINDOWS\system32\nls;C:\WINDOWS\system32\nls\ENGLISH;C:\PROGRA~1\IBM\CLIENT~1;C:\PROGRA~1\IBM\CLIENT~1\Shared;C:\PROGRA~1\IBM\CLIENT~1\Emulator;C:\Program Files\Microsoft SQL Server\80\Tools\BINN;C:\Program Files\Microsoft BizTalk Server 2004\;C:\Program Files\Microsoft BizTalk Server 2004\EDI\Subsystem\;C:\Program Files\Common Files\Microsoft Shared\Enterprise Servers\Commerce\;C:\Program Files\Rational\common;C:\Program Files\Rational\ClearQuest;C:\Program Files\Rational\Rose\TopLink\;C:\Program Files\Rational\Rational Test;C:\Program Files\Rational\ClearCase\bin;C:\PROGRA~1\IBM\SQLLIB\BIN;C:\PROGRA~1\IBM\SQLLIB\FUNCTION;C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\bin;c:\apache-ant-1.6.5\bin;Z:."></property>
+    <property name="ant.file.biz" value="C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\build.xml"></property>
+    <property name="name" value="biz"></property>
+    <property name="java.vendor.url" value="http://www.ibm.com/"></property>
+    <property name="java.vm.vendor" value="IBM Corporation"></property>
+    <property name="java.fullversion" value="J2RE 1.4.1 IBM Windows 32 build cn1411-20031011 (JIT enabled: jitc)"></property>
+    <property name="java.runtime.name" value="Java(TM) 2 Runtime Environment, Standard Edition"></property>
+    <property name="java.class.path" value="C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\antlr-2.7.5H3.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\antlr.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\asm-attrs.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\asm.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\caltag.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\castor-0.9.9.1-xml.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\cglib-2.1.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\chartServer.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\commons-beanutils.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\commons-collections-2.1.1.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\commons-digester.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\commons-fileupload.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\commons-lang-2.0.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\commons-logging-1.0.4.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\commons-logging.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\commons-validator.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\displaytag-1.0.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\dom4j-1.6.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\ehcache-1.1.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\hibernate3.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\htmlcal.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\jakarta-oro.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\jboss-j2ee.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\jbossall-client.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\jta.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\log4j-1.2.7.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\log4j-1.2.9.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\mysql-connector-java-3.1.10-bin.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\struts.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\xerces-2.6.2.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\lib\xml-apis.jar;C:\jakarta-tomcat-4.1.31\common\lib\servlet.jar;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF\classes;C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF;C:\PROGRA~1\IBM\SQLLIB\java\db2java.zip;C:\PROGRA~1\IBM\SQLLIB\java\db2jcc.jar;C:\PROGRA~1\IBM\SQLLIB\java\db2jcc_license_cu.jar;C:\PROGRA~1\IBM\SQLLIB\bin;C:\PROGRA~1\IBM\SQLLIB\java\common.jar;C:\apache-ant-1.6.5\lib\junit.jar;C:\apache-ant-1.6.5\lib\ant-launcher.jar;C:\apache-ant-1.6.5\lib\ant.jar;C:\apache-ant-1.6.5\lib\ant-junit.jar"></property>
+    <property name="deploy.path2" value="g:/jboss-4.0.2/server/default/deploy/"></property>
+    <property name="ant.version" value="Apache Ant version 1.6.5 compiled on June 2 2005"></property>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"></property>
+    <property name="java.vm.specification.version" value="1.0"></property>
+    <property name="sun.os.patch.level" value="Service Pack 2"></property>
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\gcraig\LOCALS~1\Temp\"></property>
+    <property name="deploy.path" value="c:/jakarta-tomcat-4.1.31/webapps"></property>
+    <property name="java.vendor.url.bug" value=""></property>
+    <property name="backup.path" value="f:/"></property>
+    <property name="ibm.system.encoding" value="Cp1252"></property>
+    <property name="os.arch" value="x86"></property>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"></property>
+    <property name="java.ext.dirs" value="C:\Program Files\IBM\WebSphere Studio\Application Developer\v5.1.1\runtimes\base_v51\java\jre\lib\ext"></property>
+    <property name="user.dir" value="C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF"></property>
+    <property name="line.separator" value="
+"></property>
+    <property name="java.vm.name" value="Classic VM"></property>
+    <property name="basedir" value="C:\jakarta-tomcat-4.1.31\webapps\biz\WEB-INF"></property>
+    <property name="ant.java.version" value="1.4"></property>
+    <property name="config.dir" value="../WEB-INF/config"></property>
+    <property name="file.encoding" value="Cp1252"></property>
+    <property name="build.dir2" value="../WEB-INF/build"></property>
+    <property name="build.compiler" value="modern"></property>
+    <property name="java.specification.version" value="1.4"></property>
+    <property name="src.dir" value="src/"></property>
+    <property name="generated.java.dir" value="../WEB-INF/src"></property>
+  </properties>
+  <testcase classname="com.csr.common.dto.UserTest" name="testUser" time="0.015"></testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

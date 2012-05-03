@@ -1,0 +1,47 @@
+biz dependencies
+
+jboss client jars
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+jbossall-client.jar
+jboss-j2ee.jar
+
+
+hibernate client jars
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+hibernate3.jar
+ehcache-1.1.jar
+antlr-2.7.5H3.jar
+antlr.jar (?)
+asm.jar
+asm-attrs.jar
+jta.jar
+cglib-2.1.jar
+jakarta-oro.jar
+
+
+openjms client jars
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+openjms-0.7.7-alpha-1.jar
+openjms-common-0.7.7-alpha-1.jar
+openjms-net-0.7.7-alpha-1.jar
+commons-codec-1.3.jar
+commons-logging-1.0.4.jar
+jms-1.1.jar
+jndi-1.2.1.jar
+spice-jndikit-1.1.jar
+
+
+tapestry 3.0
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+javassist-2.5.1.jar
+ognl-2.6.7.jar
+tapestry-3.0.3.jar
+commons
+
+
+misc
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+commons
+displaytag
+castor-0.9.9.1-xml.jar
+struts

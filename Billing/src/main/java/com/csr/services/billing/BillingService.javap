@@ -1,0 +1,36 @@
+package com.csr.services.billing;
+
+import com.csr.common.dao.DAO;
+import java.util.List;
+
+/*
+ * BillingService
+ * Built on java version $ant:java.version
+ *!text $timestamp
+ */
+public class BillingService {
+	// make into IBillingService and BillingService class
+	public BillingService() {
+	}
+
+#if $ant:java.version == 1.5
+	public List<Invoice> getInvoices(int pagePtr) {
+#else
+	public List getInvoices(int pagePtr) { #endif
+		return null;
+	}
+
+	//public List getInvoices(int pagePtr, Filter listFilter) {
+	//}
+
+	!prop(InvoiceDAO, DAO)
+	!prop(ProductDAO, DAO)
+	!prop(AddressDAO, DAO)
+	!prop(ClientDAO, DAO)
+	!prop(ContactDAO, DAO)
+	!prop(EmailDAO, DAO)
+	!prop(PhoneDAO, DAO)
+	!prop(UrlDAO, DAO)
+	!prop(CommonDAO, DAO)
+	!toString(BillingService)
+}

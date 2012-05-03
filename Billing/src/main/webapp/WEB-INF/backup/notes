@@ -1,0 +1,53 @@
+http://www.tapestryforums.com/viewtopic.php?t=3552&highlight=
+
+http://www.browsermedia.com/devcorner/whitepapers/ioc.jsp
+	Pattern Languages of Program Design 3 (Paperback)
+Patterns for Logging Diagnostic Messages
+	
+	
+	<!--
+	  - The message source for this context, loaded from localized "messages_xx" files
+	  - in the classpath, i.e. "/WEB-INF/classes/messages.properties" or
+	  - "/WEB-INF/classes/messages_fr.properties".
+	  -
+	  - "getMessage" calls to this context will use this source.
+	  - Child contexts can have their own message sources, inheriting all messages from this
+	  - source, being able to define new messages and override ones defined in this source.
+	  -
+	  - We have no need for application messages in this tiny application, so this
+		- definition will simply be used by the next level (countries-servlet.xml).
+
+	bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
+		property name="basename" value="messages"
+	bean
+	  -->
+<!--
+	<bean id="timerInterceptor" class="MyInterceptor"/> 
+	<bean id="timerInterceptor2" class="MyInterceptor2"> 
+			<property name="target" ref="MyComponentTarget"/>
+	</bean>
+	
+	<bean id="MyComponentTarget" class="MyComponentImpl"/> 
+	<bean id="MyComponent" class="org.springframework.aop.framework.ProxyFactoryBean"> 
+		<property name="proxyInterfaces">
+			<value>MyComponent</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>timerInterceptor</value>
+				<value>timerInterceptor2</value>
+				<value>MyComponentTarget</value>
+			</list>
+		</property>
+	</bean>
+-->
+
+	<!--
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/biz" />
+		<property name="username" value="" />
+	</bean>
+	-->
+
+

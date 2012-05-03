@@ -1,0 +1,10 @@
+dto.java
+
+dto.hbm.xml
+
+action mapping   struts-config    4 lines
+tile mapping                                   4 lines  
+table.jsp						 2 lines
+
+(generic action)
+(generic dao)

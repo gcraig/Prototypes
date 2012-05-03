@@ -1,0 +1,160 @@
+body
+{ 
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+	background-color: #ffff; 
+	font-family: Arial, Verdana, Sans-serif, Helvetica;
+}
+
+.boxtitle
+{
+	text-align: center;
+	background-color: #006633;
+	color: white;
+	font-weight: bolder;
+}
+
+.boxsubtitle
+{
+	text-align: center;
+	background-color: #009866;
+	color: white;
+
+/*	border-bottom: 1px solid #339966;*/
+	font-weight: bolder;
+}
+
+.boxtable 
+{
+	width: 150;
+	padding: 6;
+	margin-top: 5;
+	margin-bottom: 5;
+	border: 1px solid #339966;
+}
+
+img
+{ 
+	border:none;
+}
+
+h1 
+{
+	margin: 10px 0 0px 0;
+	font-size: 1.6em;
+}
+
+h2 
+{
+	margin: 10px 0 0px 0;
+	font-size: 1.4em;
+}
+
+#menutitle h3
+{
+	margin: 10px 0 0px 0;
+	font-size: 1em;
+	color: #888888;
+}
+
+form
+{
+	padding: 0 0 0 0;
+}
+
+table
+{
+	padding: 0 0 0 0;
+}
+
+td, li, tr, select, input
+{
+	font-size: 8pt;
+}
+
+td a, td a:visted
+{
+	color: #006633
+}
+
+th
+{
+	font-size: .8em;
+	color: white;
+	background-color: #006633;
+}
+
+th a, th a:visited, th a:hover
+{
+	color: white;
+	background-color: #006633;
+}
+
+th.sorted a, th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+}
+
+tr.odd 
+{
+	/*background-color: #ffffcc*/   /*BACKGROUND*/
+	  background-color: #dede89; /*#E8E8DB   #EFEF9A;       */ 
+}
+
+tr.even
+{
+	background-color: #EDEEAC; /*#DEDED1  */
+}
+
+hr
+{
+	height: 1px;
+	color: #000;
+	clear:both;
+}
+
+.submit2
+{
+	background:/*#006486; #fb0;*/ dddddd;
+	padding:2px; 
+	margin:0px; 
+	/*color:#fff; font-weight:bold;*/   
+	border:1px solid #006486; 
+}
+
+.submit3
+{ 
+	background:/*#006486; #fb0;*/ dddddd; 
+	padding:0px; 
+	margin:0px; /*color:#fff; font-weight:bold;*/ 
+	font-size:100%; 
+	position:relative; 
+	top:-1px; 
+	border:1px solid #006486; 
+}
+
+.submit4
+{ 
+	background:/*#006486; #fb0;*/ #feffbd; 
+	padding:0px; 
+	margin:0px; /*color:#fff; font-weight:bold;*/ 
+	font-size:100%; 
+	position:relative; 
+	top:-1px; 
+	border:1px solid #006486; 
+}
+
+h3, h4, h5, h6, p, strong, div, form, acronym, label {
+	margin:0;
+	padding:0;
+	font-size: 1em;
+
+
+	background-repeat:no-repeat;
+	list-style-type:none;
+}
+
+
+
+

@@ -1,0 +1,115 @@
+/*
+body, li, a {
+	font: 11px Verdana;
+}
+b, strong {
+	font-weight: bold;
+}
+*/
+.ddmenucontainer {
+	margin: 4px;
+	background-color: #1E65AD;
+}
+
+.ddmenu, .ddmenu ul {
+	margin: 0;
+	padding: 0;
+/*	width: 150px;*/
+	list-style: none;
+}
+.ddmenu, .ddmenu a {
+	background-color: #1E65AD;
+	color: #FFFFFF;
+	font: 11px Verdana;
+	text-align: center
+}
+.ddmenu a, .ddmenu a:hover {
+	text-decoration: none;
+}
+.ddmenu ul {
+	position: absolute;
+	top: 24px;
+	left: 0px;
+	display: none;
+	border: 1px solid #1E65AD;
+	/*border-top-width: 0;*/
+}
+.ddmenu ul ul {
+	position: absolute;
+	top: 0px;
+	left: 110px;
+}
+.ddmenu li ul {
+	background-color: #ffffff !important;
+	border-top-width: 0;
+}
+.ddmenu li ul ul {
+	border-top-width: 1px;
+	background-color: #E4EEFE !important;
+}
+.ddmenu li {
+	width: 110px;
+	float: left;
+	position: relative;
+/*	border-bottom: 1px solid #036;*/
+}
+.ddmenu li li, .ddmenu li li a {
+	text-align: left !important;
+}
+
+/* Links inside the menu */
+.ddmenu a {
+	display: block;
+	padding: 4px 0px;
+/*	margin: 4px;*/
+	color: white;
+	white-space: nowrap;
+	text-decoration: none;
+}
+.ddmenu ul a {	/* <<< level 2 items */
+	color: #1E65AD;
+	margin: 2px;
+	padding: 0px 0px 2px 6px;
+	background: #ffffff url(../images/menu/level-2-bg.gif) repeat-y left top;
+}
+.ddmenu ul a:hover, .ddmenu ul a.highlighted:hover {
+	background: #B9CFE5 url(none);
+}
+.ddmenu ul ul a, .ddmenu ul ul a.highlighted:hover {
+	background: #E4EEFE url(none);
+}
+.ddmenu ul ul a { /* <<< level 3 items */
+	color: #1B4978;
+	background: url(../images/menu/level-3-bg.gif) repeat-y left top;
+}
+.ddmenu a:hover, .ddmenu a.highlighted:hover {
+	color: #1E65AD;
+	font-weight: bold;
+	background-color: #F6F8FB;
+}
+.ddmenu ul ul a:hover, .ddmenu ul ul a.highlighted:hover {
+	color: white;
+	font-weight: bold;
+	background-color: #1E65AD;
+}
+.ddmenu a.highlighted {
+	color: #1E65AD;
+	font-weight: bold;
+	background: #CDDDEE url(none);
+}
+/* 'subind' submenu indicators, which are automatically prepended to 'A' tag contents. */
+.ddmenu a .subind {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+/* This semi-commented section exists to fix bugs in IE/Windows (the 'Holly Hack'). \*/
+* html .ddmenu li {
+	float: left;
+	height: 1%;
+}
+* html .ddmenu a {
+	height: 1%;
+}
+/* End Hack */

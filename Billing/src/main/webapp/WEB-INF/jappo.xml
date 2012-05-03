@@ -1,0 +1,64 @@
+<macros>
+
+	<macro name="$ppinfo" class="org.osfry.jappo.macros.InfoMacro"/>
+
+	<macro name="$timestamp" class="org.osfry.jappo.macros.TimestampMacro" start="&lt;&lt;&lt;" end="&gt;&gt;&gt;"/>
+
+	<macro name="$date" class="org.osfry.jappo.macros.DateMacro"/>
+
+	<macro name="!text" class="org.osfry.jappo.macros.TextMacro"/>
+	
+	<macro name="!import" class="org.osfry.jappo.macros.ImportMacro"/>
+
+	<macro name="!out" class="org.osfry.jappo.macros.TemplateMacro">
+		<template>
+			<![CDATA[System.out.println(DATA)]]>
+		</template>
+		<param name="DATA"/>
+	</macro>
+
+	<macro name="!prop" class="org.osfry.jappo.macros.TemplateMacro">
+		<template><![CDATA[
+	private TYPE pNAME;
+
+	public void setNAME(TYPE v) {
+		pNAME = v;
+	}
+
+	public TYPE getNAME() {
+	    return pNAME;
+	}]]>
+		</template>
+		<param name="NAME"/>
+		<param name="TYPE"/>
+	</macro>
+
+	<macro name="!toString" class="org.osfry.jappo.macros.TemplateMacro">
+		<template><![CDATA[
+	public String toString() {
+		return "NAME";
+	}]]>
+		</template>
+		<param name="NAME"/>
+	</macro>
+
+	<macro name="!prex" class="org.osfry.jappo.macros.PropExMacro"/>
+
+	<macro name="#define" class="org.osfry.jappo.macros.DefineMacro">
+		<system prefix="$sys:"/>
+		<ant prefix="$ant:"/>
+	</macro>
+
+	<macro name="#ifdef" class="org.osfry.jappo.macros.IfdefMacro" start=" " end="#endif">
+		<else name="#else"/>
+		<define name="#define"/>
+	</macro>
+
+	<macro name="#ifndef" class="org.osfry.jappo.macros.IfNdefMacro" start=" " end="#endif">
+		<else name="#else"/>
+		<define name="#define"/>
+	</macro>
+
+	<macro name="#if" class="org.osfry.jappo.macros.IfMacro" start=" " end="#endif"/>
+
+</macros>

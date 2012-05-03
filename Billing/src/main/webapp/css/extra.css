@@ -1,0 +1,29 @@
+/* this css file is for extra stuff - CH */
+/* i realise i will buen in hell for this :) */
+
+.comp td {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000; background-color: #fff; text-align: center;}
+.comp th {font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #fff; background-color: #369; font-weight: bold;}
+.comp td.subhead {font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #000; background-color: #ccc; font-weight: bold; text-align: left;}
+.comp td.fig {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000; background-color: #fff; text-align: right;}
+.comp {background-color: #eee;}
+
+.ratetable td {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000; background-color: #fff; text-align: right;}
+.ratetable th {font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #fff; background-color: #369; font-weight: bold;}
+.ratetable td.type {font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #000; background-color: #ccc; font-weight: bold; text-align: right;}
+.ratetable {background-color: #eee;}
+
+
+.sizetable td {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000; background-color: #fff; text-align: left;}
+.sizetable th {font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #fff; background-color: #369; font-weight: bold;}
+.sizetable td.os {font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #000; background-color: #ccc; font-weight: bold; text-align: right;}
+.sizetable {background-color: #eee;}
+
+.table td {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000; background-color: #fff; text-align: left;}
+.table th {font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #fff; background-color: #54a4de; font-weight: bold;}
+.table td.subhead {font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #000; background-color: #e7e4d3; font-weight: bold; text-align: right;}
+.table {background-color: #ddd;}
+
+.bannerad {text-align: center; border-top: 1px solid #ccc; margin: 0;}
+.bannerad2 {text-align: center; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; margin: 0;}
+
+.homebannerad {text-align: center; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 0; margin: 20px 20px 0 203px;}

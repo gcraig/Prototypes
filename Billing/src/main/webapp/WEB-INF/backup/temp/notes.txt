@@ -1,0 +1,181 @@
+package com.csr.common.dao;
+
+import org.hibernate.*;
+import org.hibernate.criterion.*;
+import java.io.*;
+import java.util.*;
+
+public class GenericDAO<T, ID extends Serializable> /*implements DAO*/ extends DAO
+{
+	private Class<T> persistentClass;
+	private Session session;
+
+//	@SuppressWarnings("unchecked")
+	public GenericDAO(Class<T> persistentClass, Session session) 
+	{
+		this.persistentClass = persistentClass;
+		this.session = session;
+
+		//HibernateUtil.beginTransaction();
+		//System.out.println( persistentClass.getName() );
+	}
+	
+	protected Session getSession() 
+	{
+		return this.session;
+	}
+
+	public Class<T> getPersistentClass() 
+	{
+        return this.persistentClass;
+    }
+	
+	public int countAll() throws Exception
+	{
+		Query q = getSession().createQuery("select count(*) from " + getPersistentClass().getName());
+		Object o = q.uniqueResult();
+		Integer i = new Integer(o.toString());
+		System.out.println( i );
+		return i.intValue();
+	}
+
+	//@SuppressWarnings("unchecked")
+    public T makePersistent(T entity) throws Exception
+	{
+        getSession().saveOrUpdate(entity);
+        return entity;
+    }
+
+    public void makeTransient(T entity) 
+	{
+        getSession().delete(entity);
+    }
+
+//	@SuppressWarnings("unchecked")
+    public List<T> findAll() throws Exception
+	{
+        return findByCriteria();
+    }
+
+//	@SuppressWarnings("unchecked")
+	public T findByID(ID id)  throws Exception
+	{
+		T entity;
+		entity = (T) getSession().load(getPersistentClass(), id);
+        return entity;
+
+		// org.hibernate.ObjectNotFoundException
+		// ClassNotFoundException
+
+		/*
+		try {
+			return (T) (getSession().load(persistentClass, 1));
+			} 
+		catch (HibernateException e) {
+			throw new Exception(e);        
+			}    
+		*/
+	} 
+
+	public List search(String startRecord, int pageSize) throws Exception
+	{
+		Criteria criteria = getSession().createCriteria( getPersistentClass() );
+		
+		criteria.setMaxResults(pageSize);
+		criteria.setFirstResult(new Integer(startRecord).intValue());
+		//criteria.setFirstResult(PAGE_SIZE * pageNumber);
+		
+		try 
+		{
+			// return new ArrayList(criteria.list());
+			return criteria.list();
+		}
+		catch (HibernateException e) 
+		{     
+			throw new Exception(e);        
+		}    
+	}
+
+//	@SuppressWarnings("unchecked")
+	protected List<T> findByCriteria(Criterion... criterion) throws Exception
+	{
+		Criteria criteria = getSession().createCriteria( getPersistentClass() );
+		
+		for (Criterion c : criterion) 
+		{   
+			criteria.add(c);    
+		}
+		
+		try 
+		{
+			// return new ArrayList(criteria.list());
+			return criteria.list();
+		}
+		catch (HibernateException e) 
+		{     
+			throw new Exception(e);        
+		}    
+	}
+
+//	select count(*) from Address
+//	query.list().size() 			
+
+//Query q = s.createFilter( collection, "" ); // the trivial filter
+//q.setMaxResults(PAGE_SIZE);
+//q.setFirstResult(PAGE_SIZE * pageNumber);
+//List page = q.list();
+
+
+	public static void main(String[] args) throws Exception
+	{
+//		GenericDAO dao = new GenericDAO(Address.class);
+//		GenericDAO dao = new GenericDAO( Class.forName(args[0]), HibernateUtil.currentSession() );
+//		CrudDAO dao = DAOManager.locateDAO("Address");
+//		DAO crudDAO = DAOFactory.createCrudDAO("Address");
+
+		/*
+		List col = dao.findByCriteria();
+		for ( Object e : col )
+		{
+			System.out.println(e);
+		}
+		dao.size();
+		*/
+
+		//GenericDAO crudDAO = DAOFactory.createCrudDAO("Address");
+		//System.out.println( crudDAO.findByID("1") );
+		//System.out.println( crudDAO.findAll() );
+	
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/*
+import java.util.*;
+import java.io.*;
+
+public interface GenericDAO<T, ID extends Serializable> 
+{
+    public T findById(ID id, boolean lock);
+
+    public List<T> findAll();
+
+    List<T> findByExample(T exampleInstance);
+
+    T makePersistent(T entity);
+
+    void makeTransient(T entity);
+
+	void store(T entity);
+
+	void update(T entity);
+}
+*/

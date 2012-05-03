@@ -1,0 +1,90 @@
+Kxsv7Rfo+PC5zrfp7L4FB8oHWms63F+jZ1IfO6freDQ4b2sYrAmLHW3mG+yQS1KCYMkx7vDJYxJ8MafoTcDhOfVBo8+GCZWznSaI3WeTiYmx5iTuQ1mv7AbqEJxvS7B5WCeZTe4Z25XAsudXb42cS8jLuOXN00QSAo04ayly1FhYPGCja/ovS+SgzPMZG4ZZQqTI0a8+QApkWx1Vzu/JI6oOfMDo154FF34Kh5k8CmfYR0Slg
+
+dynamicdrive.com
+
+
+`product`
+
+
+"0",32,"Good","Wicker Pink Hat",432432.43,1
+"121",543543,"","53",543543.00,1
+"S04303",59445,"Service","Wash wicker table",324.43,1
+"S100",,"Service","Site Procurement and Hosting",15.00,0
+"S101",,"Service","Virtual Site Bannerless Hosting",15.00,0
+"S102",,"Service","Web Site Creation: General Development",20.00,0
+"S103",,"Service","Support",15.00,0
+"S222",43,"Good","Wicker Chair",1300.00,1
+"S333",43,"Good","Wicker Car",54354.00,1
+"S54545",42342,"","Corvette",4324324.43,1
+"S764576",897,"","Paper clips",432.43,1
+"S777",54,"Good","Wicker Mustache",4500.00,1
+"S888",43,"Good","Wicker Table",4323.00,1
+"S999",42,"Good","Wicker Hat",43.00,1
+
+
+addressid, client id
+0,0,"1231 South Joliet St.","","","Joliet","Illinois","60343","USA","Billing"
+1,0,"110 Arcadia Ave.","","","Romeoville","Illinois","60441","USA","Billing"
+2,0,"543 Michigan Ave.","","","South Cart","Michigan","55312","USA","Billing"
+3,1,"401 Dernst Court","","","Carnville","Indiana","34343","USA","Billing"
+4,0,"752 Farragut Avenue","","","Romeoville","IL","60442","USA","Billing"
+6,0,"23 Orchard rd","","","Chicago","IL","43442","US",""
+8,0,"123 My street","Unit 24313","","Oswego","IL","54254","USA",""
+
+
+
+clientid, client number, clientname, creditlimit, billable
+0,"","Citizens for Weber",5000.00,1
+1,"","Friends of Kush",5000.00,1
+2,"","Ace Hardware, Inc.",5000.00,1
+3,"","SANYO Incorporated",5000.00,1
+4,"","Comcast Cable Corporation",5000.00,1
+5,"","FORD Motor Corporation",5000.00,1
+6,"","Scrabble Word Testers",5000.00,1
+7,"","Magnavox Vision Systems",5000.00,1
+8,"","Sun Microsystems, Inc.",5000.00,1
+9,"","EMS System Support",5000.00,1
+10,"","Motorola, Inc.",5000.00,1
+11,"","Microsoft, Inc.",5000.00,1
+12,"","Wegmans Food Markets",5000.00,1
+13,"","W. L. Gore",5000.00,1
+14,"","Republic Bancorp",5000.00,1
+15,"","Genentech",5000.00,1
+16,"","Xilinx",5000.00,1
+17,"","J. M. Smucker",5000.00,1
+18,"","S. C. Johnson & Son",5000.00,1
+19,"","Griffin Hospital",5000.00,1
+20,"","Alston & Bird",5000.00,1
+21,"","American Cast Iron Pipe Company",5000.00,1
+22,"","American Century Investments",5000.00,1
+23,"","Network Appliance",5000.00,1
+24,"","Bronson Healthcare Group",5000.00,1
+25,"","CDW Corporation",5000.00,1
+26,"","Timberland",5000.00,1
+27,"","Pella",5000.00,1
+28,"","Marriott International",5000.00,1
+29,"","St. Luke's Episcopal Health System",5000.00,1
+30,"","Emmis Communications",5000.00,1
+31,"","Wm. Wrigley Jr.",5000.00,1
+32,"","Granite Construction",5000.00,1
+33,"","Medtronic",5000.00,1
+34,"","Vanguard Group",5000.00,1
+35,"","SEI Investments",5000.00,1
+401,"44444","Pepsi, Co.",2000.00,1
+
+
+invoice_adj_amounts
+invoice number, totalAmount
+1546,60.00
+1525,825.00
+
+invoice_line_items
+invoiceNumber, lineItemNumber, productID, units,total
+1525,1,"S100",1.00,15.00
+1525,2,"S101",1.00,15.00
+1525,3,"S102",39.00,780.00
+1525,4,"S103",1.00,15.00
+1546,1,"S100",1.00,15.00
+1546,2,"S101",3.00,45.00
+
+

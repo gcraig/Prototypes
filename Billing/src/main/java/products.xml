@@ -1,0 +1,37 @@
+<products>
+
+	<product>
+		<id>0</id>
+		<category>Good</category>
+		<parent_id>0</parent_id>
+		<product_type></product_type>
+		<description>Paper clips</description>
+		<price>2.59</price>
+		<notes></notes>
+<!--
+		<taxable>1</taxable>
+ -->	
+ 	</product>
+
+	<!--
+	<product id="1">
+		<category>Service</category>
+		<parent_id>0</parent_id>
+		<product_type></product_type>
+		<description>Wash wicker products</description>
+		<price>35.69</price>
+		<notes></notes>
+		<taxable>1</taxable>
+	</product>
+	<product id="2">
+		<category>Service</category>
+		<parent_id>0</parent_id>
+		<product_type></product_type>
+		<description>Clean paper clips</description>
+		<price>12.59</price>
+		<notes></notes>
+		<taxable>1</taxable>
+	</product>
+	-->
+
+</products>

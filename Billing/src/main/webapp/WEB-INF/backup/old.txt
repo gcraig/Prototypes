@@ -1,0 +1,50 @@
+
+	<table id="3column" width="98%" border="1" cellspacing="0" cellpadding="0" align=center>
+
+		<tr valign='top' bgcolor="#ffffff">
+			<td colspan="2" style="border-bottom: 1px solid navy" valign="bottom">
+
+				<tiles:get name='header' ignore="true"/>
+
+			</td>
+			<td style="border-bottom: 1px solid navy" valign="bottom">
+
+				<!-- make tiles, 'logo' width="150" height="80" -->
+				<img src="images/csrlogo3.jpg" border="0" alt="">
+
+			</td>
+		</tr>
+
+
+		<tr valign="top"  bgcolor="<%=BACKGROUND%>">
+			<td width="17%" valign="top" style="border-left: 1px solid navy" align="center">
+
+				<tiles:get name='menu' ignore="true"/>
+			
+			</td> 
+			<td width="66%" bgcolor="<%=BACKGROUND%>" valign="top" align="left" valign=top>
+
+				<tiles:get name='menutab' ignore="true"/><br>
+					
+				<tiles:get name='content' ignore="true"/><br>
+
+				<tiles:get name='pageFooter' ignore="true"/>
+
+			</td> 
+			<td width="17%" valign="top"  style="border-right: 1px solid navy">
+
+				<tiles:get name='info'  ignore="true"/>
+
+			</td> 
+		</tr> 
+	   
+		<tr valign='top' bgcolor="#ffffff">
+			<td colspan="3" style="border-top: 1px solid navy">
+				
+				<tiles:get name='footer'  ignore="true"/>
+
+			</td>
+		</tr>
+
+	</table> 
+6:57 PM 11/21/20056:57 PM 11/21/2005

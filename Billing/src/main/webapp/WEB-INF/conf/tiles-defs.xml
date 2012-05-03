@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+    <definition name=".mainLayout" path="/common/layouts/new-mainLayout.jsp">
+        <put name="title"  value="Page Title" />
+        <put name="header" value="/common/view/header.jsp" />
+        <put name="menu"   value="/common/view/menu.jsp" />
+        <put name="menutab"   value="/common/view/menutab.jsp" />
+        <put name="content"   value=".mainMenu" />
+        <put name="pageFooter"   value="/common/view/pageFooter.jsp" />
+        <put name="info"   value="/common/view/info-billing.jsp" />
+        <put name="footer" value="/common/view/footer.jsp" />
+        <!-- <put name="body"   value=".portal.body" /> -->
+       <!--  <put name="menu"   value=".mainMenu" /> -->
+    </definition>
+
+    <definition name=".listLayout" path="/common/layouts/listLayout.jsp">
+        <put name="title"  value="Page Title" />
+        <put name="header" value="/common/view/header.jsp" />
+        <put name="menu"   value="/common/view/menu.jsp" />
+        <put name="menutab"   value="/common/view/menutab.jsp" />
+        <put name="table"   value=".mainMenu" />
+        <put name="pageFooter"   value="/common/view/pageFooter.jsp" />
+        <put name="info"   value="/common/view/info-billing.jsp" />
+        <put name="footer" value="/common/view/footer.jsp" />
+        <!-- <put name="body"   value=".portal.body" /> -->
+       <!--  <put name="menu"   value=".mainMenu" /> -->
+    </definition>
+
+    <definition name="THome" extends=".mainLayout">
+	  <put name='title' value='Home'  direct="true"  /> 
+	  <put name='breadcrumb' value='Home > Overview' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/home/home.jsp'/>
+    </definition>
+
+    <definition name="TEvents" extends=".mainLayout">
+	  <put name='title' value='Home'  direct="true"  /> 
+	  <put name='breadcrumb' value='Home > Events' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/home/home.jsp'/>
+    </definition>
+
+    <definition name="TToDoList" extends=".mainLayout">
+	  <put name='title' value='ToDoList'  direct="true"  /> 
+	  <put name='breadcrumb' value='Home > To Do List' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/home/todolist.jsp'/>
+    </definition>
+
+    <definition name="TNotes" extends=".mainLayout">
+	  <put name='title' value='Notes'  direct="true"  /> 
+	  <put name='breadcrumb' value='Home > Notes' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/home/notes.jsp'/>
+    </definition>
+
+    <definition name="TUserPreferences" extends=".mainLayout">
+	  <put name='title' value='Notes'  direct="true"  /> 
+	  <put name='breadcrumb' value='Home > User Preferences' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/home/userpreferences.jsp'/>
+    </definition>
+
+    <definition name="TBilling" extends=".mainLayout">
+	  <put name='title' value='Billing'  direct="true"  /> 
+	  <put name='breadcrumb' value='Billing > Overview' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/billing/billing.jsp'/>
+    </definition>
+
+	<definition name="TClients" extends=".mainLayout">
+	  <put name='title' value='Clients'  direct="true"  /> 
+	  <put name='breadcrumb' value='Clients > Overview' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-clients.jsp' />
+	  <put name='content' value='/clients/clients.jsp'/>
+    </definition>
+
+
+
+	<definition name="TlistClients" extends=".mainLayout">
+	  <put name='title' value='List Clients'  direct="true"  /> 
+	  <put name='breadcrumb' value='Clients > Portfolio > List Clients' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-clients.jsp' />
+	  <put name='content' value='/clients/listClients.jsp'/>
+    </definition>
+
+	<definition name="TlistClients2" extends=".listLayout">
+	  <put name='title' value='List Clients'  direct="true"  /> 
+	  <put name='breadcrumb' value='Clients > Portfolio > List Clients' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-clients.jsp' />
+	  <put name="tableName" value="/clients/listAddresses2.jsp" />
+    </definition>
+
+
+
+	<definition name="TlistAddresses" extends=".mainLayout">
+	  <put name='title' value='List Addresses'  direct="true"  /> 
+	  <put name='breadcrumb' value='Clients > Portfolio > List Addresses' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-clients.jsp' />
+	  <put name='content' value='/clients/listAddresses.jsp'/>
+    </definition>
+
+	<definition name="TlistAddresses2" extends=".listLayout">
+	  <put name='title' value='List Addresses'  direct="true"  /> 
+	  <put name='breadcrumb' value='Clients > Portfolio > List Addresses' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-clients.jsp' />
+	  <put name="tableName" value="/clients/listAddresses2.jsp" />
+    </definition>
+
+
+<!-- 	<definition name="TtestClients" extends=".mainLayout">
+	  <put name='title' value='Test Clients'  direct="true"  /> 
+	  <put name='breadcrumb' value='Clients > Portfolio > Test Clients' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-clients.jsp' />
+	  <put name='content' value='/clients/testClients.jsp'/>
+    </definition> -->
+
+	<definition name="TaddProduct" extends=".mainLayout">
+	  <put name='title' value='Add Product'  direct="true"  /> 
+	  <put name='breadcrumb' value='Billing > Products > Add Product' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/common/view/DynamicAddForm.jsp'/>
+    </definition>
+
+	<definition name="TaddDynamic" extends=".mainLayout">
+	  <put name='title' value='Add'  direct="true"  /> 
+	  <put name='breadcrumb' value='Billing > Products > Add Product' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/common/view/DynamicAddForm.jsp'/>
+    </definition>
+
+	<definition name="TviewDynamic" extends=".mainLayout">
+	  <put name='title' value='Add'  direct="true"  /> 
+	  <put name='breadcrumb' value='Billing > Products > Add Product' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/common/view/DynamicViewForm.jsp'/>
+    </definition>
+
+	<definition name="TlistProducts" extends=".mainLayout">
+	  <put name='title' value='List Products'  direct="true"  /> 
+	  <put name='breadcrumb' value='Billing > Products > List Products' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/billing/listProducts.jsp'/>
+    </definition>
+
+	<definition name="TlistInvoices" extends=".mainLayout">
+	  <put name='title' value='List Invoices'  direct="true"  /> 
+	  <put name='breadcrumb' value='Billing > Invoices > List Invoices' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/billing/listInvoices.jsp'/>
+    </definition>
+
+	<definition name="TviewInvoice" extends=".mainLayout">
+	  <put name='title' value='View Invoice'  direct="true"  /> 
+	  <put name='breadcrumb' value='Billing > Invoices > View Invoice' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/billing/viewInvoice.jsp'/>
+    </definition>
+
+	<definition name="TnonexistInvoice" extends=".mainLayout">
+	  <put name='title' value='View Invoice'  direct="true"  /> 
+	  <put name='breadcrumb' value='Billing > Invoices > View Invoice' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/billing/nonexistInvoice.jsp'/>
+    </definition>
+
+    <definition name="TAdmin" extends=".mainLayout">
+	  <put name='title' value='Administration'  direct="true"  /> 
+	  <put name='breadcrumb' value='Admin > Overview' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-admin.jsp' />
+	  <put name='content' value='/admin/admin.jsp'/>
+    </definition>
+	
+    <definition name="TIntegration" extends=".mainLayout">
+	  <put name='title' value='Integration'  direct="true"  /> 
+	  <put name='breadcrumb' value='Integration > Overview' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-integration.jsp' />
+	  <put name='content' value='/common/pageNotFound.jsp'/>
+    </definition>
+
+    <definition name="TpageNotFound" extends=".mainLayout">
+	  <put name='title' value='Page Not Found'  direct="true"  /> 
+	  <put name='breadcrumb' value='404' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-billing.jsp' />
+	  <put name='content' value='/common/pageNotFound.jsp'/>
+    </definition>
+
+    <definition name="TsetupCompany" extends=".mainLayout">
+	  <put name='title' value='Setup Company'  direct="true"  /> 
+	  <put name='breadcrumb' value='Admin > Setup > Company' direct="true" /> 
+	  <put name='menu' value='/common/view/menu-admin.jsp' />
+	  <put name='content' value='/admin/setupCompany.jsp'/>
+    </definition>
+
+	<definition name="TTest" extends=".mainLayout">
+		<put name='title' value='Test'  direct="true"  /> 
+		<put name='breadcrumb' value='Admin > Setup > Company' direct="true" /> 
+		<put name="title"  value="Page Title" />
+        <put name="header" value="/common/view/header.jsp" />
+		<put name='menu' value='/common/view/menu-admin.jsp' />
+        <put name="menutab"   value="/common/view/menutab.jsp" />
+		<put name='content' value='/billing/test.jsp'/>
+        <put name="pageFooter"   value="/common/view/pageFooter.jsp" />
+        <put name="info"   value="/common/view/info-billing.jsp" />
+        <put name="footer" value="/common/view/footer.jsp" />
+    </definition>
+
+</tiles-definitions>
+
+
+
+
+    <!-- sample tiles definitions
+    <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">
+        <put name="title"  value="Sample Page Title" />
+        <put name="header" value="/common/header.jsp" />
+        <put name="menu"   value=".mainMenu" />
+        <put name="footer" value="/common/footer.jsp" />
+        <put name="body"   value=".portal.body" />
+    </definition>
+
+    <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
+        <putList name="list" >
+            <add value=".menu.links" />
+            <add value=".menu.taglib.references" />
+            <add value=".menu.printer.friendly" />
+            <add value=".menu.old.documents" />
+      </putList>
+    </definition>
+
+    <definition name="aPage" extends=".mainLayout">
+        <put name="title"  value="Another Title" />
+        <put name="body"   value=".aPage.body" />
+    </definition>
+
+    end samples -->

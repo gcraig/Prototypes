@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<!DOCTYPE product PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN"
+                           "http://castor.org/mapping.dtd">
+<mapping>
+
+  <!--  Mapping for Product  -->
+
+  <class name="com.csr.product.dto.Product">
+  
+  <!-- identity="id" -->
+
+	<description>Product group</description>
+	<map-to table="product" xml="products" />
+
+    <field name="productID">
+      <xml name="id" node="text" />
+    </field>
+
+	<field name="productCategory">
+      <xml name="category" node="text" />
+    </field>
+
+    <field name="parentProductID">
+      <xml name="parent_id" node="text"/>
+    </field>
+
+	<field name="productType">
+      <xml name="product_type" node="text"/>
+    </field>
+
+	<field name="description">
+      <xml node="text"/>
+    </field>
+    
+	<field name="price">
+      <xml node="text"/>
+	</field>
+
+    <field name="notes">
+      <xml node="text"/>
+    </field>
+
+<!-- 
+	<field name="taxable">
+      <xml node="text"/>
+    </field>
+ -->
+
+  </class>
+
+	<class name="com.csr.stubs.dao.ProductList">
+
+<!-- 	  <field name="name" type="string">
+		<bind-xml name="name" node="attribute" />
+	  </field>
+ -->
+	  <field name="products" type="com.csr.product.dto.Product" collection="collection" />
+
+	</class>
+
+</mapping>
+
